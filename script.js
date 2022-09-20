@@ -1,6 +1,7 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
+// Added randomized functions for random characters
 function randomInt(min, max) {
   if (!max) {
     max = min
@@ -29,11 +30,13 @@ function generatePassword() {
       return
     }
 
+// Confirm window prompts for different characters to include in password
     var confirmLowercase = window.confirm("Would you like to inlude lowercase letters in the password?")
     var confirmUppercase = window.confirm("Would you like to include uppercase letters in the password?")
     var confirmNumbers = window.confirm("Would you like to include numbers in the password?")
     var confirmSpecial = window.confirm("Would you like to include special characters in the password?")
 
+// Characters lists    
     var lowercaseList = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
     var uppercaseList = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
     var numberList = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
@@ -68,8 +71,7 @@ function generatePassword() {
       var randomChara = getRandomItem(randomList)
       generatedPassword += randomChara
     }
-
-    console.log(generatedPassword)
+    return generatedPassword
 }
 
 // Write password to the #password input
